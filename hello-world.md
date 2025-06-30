@@ -1,25 +1,24 @@
 ---
-title: Hello World!
-description: I am the home page of this project
+title: Hello, World! 👋🏻
+description: Welcome to my corner of the internet
 layout: libdoc_page.liquid
 permalink: index.html
 date: git Last Modified
-tags:
-    - widgets
 ---
-{% alert 'It seems to be the beginning of a great documentation story!', 'success', 'Howdy!' %}
 
-## Let’s start!
+## Take a look around!
 
-1. {% iconCard 'Configure', 'Start entering your own settings into `settings.json` at the root of the project. <br>[Configuration documentation](https://eleventy-libdoc.netlify.app/configuration/).', 'faders' %}
-2. {% iconCard 'Write', 'Easily write documentation with Markdown and <abbr title="Hyper Text Markup Language">HTML</abbr>. <br>[Create content](https://eleventy-libdoc.netlify.app/creating-content/).', 'pen' %}
+-   {% iconCard 'Projects', 'Some nifty projects I made. <br>[Projects](#take-a-look-around).', 'code' %}
+-   {% iconCard 'Technical Writing', 'Guide/Tutorial-like content. <br>[Get Technical](/posts/)', 'pen' %}
+-   {% iconCard 'Blog', 'Where I write about my life. <br>[Read Blog](/posts/)', 'pen' %}
 
-## Get help
+## About me
 
-LibDoc’s website contains a comprehensive documentation about how to install, configure and :
+I'm a developer & tinkerer that loves learning about stuff.
 
-* [LibDoc’s homepage](https://eleventy-libdoc.netlify.app) <br>The website containing LibDocs’s presentation and comprehensive documentation.
-    * [Front matter](https://eleventy-libdoc.netlify.app/front-matter/) <br>Documentation of all front matter settings related to a LibDoc page.
-    * [Primary navigation](https://eleventy-libdoc.netlify.app/primary-navigation/) <br>Detailed features of LibDoc’s primary navigation.
-    * [SEO](https://eleventy-libdoc.netlify.app/configuration/seo/) <br>How LibDoc’s configuration and pages parameters are applied for Search Engine Optimization.
-    * [Credits](https://eleventy-libdoc.netlify.app/configuration/credits/) LibDoc could not work without these resources.
+Some of my recent interests include:
+
+-   Laser Engraving
+-   [Pico-8](https://www.lexaloffle.com/pico-8.php)
+-   Vinyl Records
+-   Raspberry Pi & Self Hosting

@@ -9,6 +9,7 @@
 {%- assign editThisPageUrl = editThisPageRootUrl | append: page.inputPath | replace: "/./", "/" | replace: "./", "/" -%}
 
 {%- comment -%} {%- assign blogPathUrl = '/' | append: libdocConfig.blogSlug | append: '/' -%} {%- endcomment -%}
+{%- comment -%} {%- assign blogPathUrl = '/' | append: libdocConfig.archiveSlug | append: '/' -%} {%- endcomment -%}
 {%- assign pagePathUrl = page.url | split: '/' -%}
 {%- if pagePathUrl[1] == libdocConfig.blogSlug and pagePathUrl[2] == null -%}
     {%- capture extendedTitle -%}
@@ -20,6 +21,18 @@
     {%- endcapture -%}
     {%- assign pageTitle = libdocConfig.blogTitle | append: extendedTitle -%}
     {%- assign pageDescription = libdocConfig.blogDescription -%}
+    {%- assign pageAuthor = libdocConfig.blogAuthor -%}
+{%- endif -%}
+{%- if pagePathUrl[1] == libdocConfig.archiveSlug and pagePathUrl[2] == null -%}
+    {%- capture extendedTitle -%}
+        {%- if pagination.pageNumber > 0 -%}
+            -
+            {{ libdocMessages.page[pageLang] }}
+            {{ pagination.pageNumber | plus: 1 }}
+        {%- endif -%}
+    {%- endcapture -%}
+    {%- assign pageTitle = libdocConfig.archiveTitle | append: extendedTitle -%}
+    {%- assign pageDescription = libdocConfig.archiveDescription -%}
     {%- assign pageAuthor = libdocConfig.blogAuthor -%}
 {%- endif -%}
 
@@ -79,6 +92,9 @@
 {%- endif -%}
 
 {%- if pagePathUrl[1] == libdocConfig.blogSlug and pagePathUrl[2] == null -%}
+    {%- assign editThisPageRootUrl = '' -%}
+{%- endif -%}
+{%- if pagePathUrl[1] == libdocConfig.archiveSlug and pagePathUrl[2] == null -%}
     {%- assign editThisPageRootUrl = '' -%}
 {%- endif -%}
 

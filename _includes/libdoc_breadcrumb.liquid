@@ -26,6 +26,14 @@
                     </a> /
                 </li>
             {% endif %}
+            {% if pageUrlSplit[1] == libdocConfig.archiveSlug and pageUrlSplit[2].size > 0 %}
+                <li class="d-flex ai-baseline gap-2">
+                    <a  href="/{{ libdocConfig.archiveSlug }}/"
+                        class="pt-2 pb-2 | fvs-wght-400 ws-nowrap">
+                        {{ libdocConfig.archiveTitle }}
+                    </a> /
+                </li>
+            {% endif %}
             {% if tag %}
                 <li class="d-flex ai-baseline gap-2">
                     <a  href="/tags/"

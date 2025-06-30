@@ -1,14 +1,35 @@
 {
-    "siteTitle": "My Project Title",
-    "siteDescription": "This is the description of my project title",
-    "author": "John Doe",
+    "siteTitle": "TerabyteTiger",
+    "siteDescription": "Writing about tech, my life, games, and more.",
+    "author": "Tyler VanBlargan",
     "faviconUrl": "/assets/myfavicon.png",
     "blogTitle": "Blog",
+    "blogDescription": "My thoughts and insights on things",
+    "archiveTitle": "Archived Posts",
+    "archiveDescription": "Archived Posts from previous blogs that might still be useful to someone.",
     "customLinks": [
         {
-            "url": "https://github.com/ita-design-system/eleventy-libdoc",
+            "url": "https://dftba.club/@TerabyteTiger",
+            "text": "Mastodon"
+        },
+        {
+            "url": "https://www.etsy.com/shop/lileggcrafts/?etsrc=sdt",
+            "text": "Etsy"
+        },
+        {
+            "url": "https://github.com/TerabyteTiger",
             "text": "GitHub"
         }
     ],
-    "editThisPageRootUrl": "https://github.com/ita-design-system/eleventy-libdoc/blob/main"
+
+    "hljsLanguages": [
+        "xml",
+        "javascript",
+        "json",
+        "yaml",
+        "liquid",
+        "markdown",
+        "css",
+        "bash"
+    ]
 }

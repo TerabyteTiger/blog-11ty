@@ -36,6 +36,8 @@ eleventyExcludeFromCollections: true
                                 {{ item.data.eleventyNavigation.parent }}
                             {% elsif item.data.tags contains 'post' %}
                                 {{ libdocConfig.blogTitle }}
+                            {% elsif item.data.tags contains 'archive' %}
+                                {{ libdocConfig.archiveTitle }}
                             {% endif %}
                         </span>
                         <span class="fvs-wght-600">

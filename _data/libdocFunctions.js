@@ -9,31 +9,28 @@ const require = createRequire(import.meta.url);
 // import libdocMessages   from "./libdocMessages.json" with { "type": "json" };
 // import libdocSystem     from "./libdocSystem.json" with { "type": "json" };
 // import icomoon          from "../core/assets/fonts/icomoon/selection.json" with { "type": "json" };
-const libdocSystem =        require("./libdocSystem.json");
-const libdocMessages =      require("./libdocMessages.json");
-const icomoon =             require("../core/assets/fonts/icomoon/selection.json");
+const libdocSystem = require("./libdocSystem.json");
+const libdocMessages = require("./libdocMessages.json");
+const icomoon = require("../core/assets/fonts/icomoon/selection.json");
 // END JSON IMPORT WORKAROUND
 
-import libdocUtils          from    "./libdocUtils.js";
-import libdocConfig         from    "./libdocConfig.js";
+import libdocUtils from "./libdocUtils.js";
+import libdocConfig from "./libdocConfig.js";
 
 export default {
     pluginsParameters: {
-        eleventyImageTransform: function() {
+        eleventyImageTransform: function () {
             // https://www.11ty.dev/docs/plugins/image/#more-configuration-options
-            const   params = libdocSystem.pluginsParameters.eleventyImageTransform,
-                    w = libdocSystem.widthContent;
+            const params =
+                    libdocSystem.pluginsParameters.eleventyImageTransform,
+                w = libdocSystem.widthContent;
             return {
                 // output image formats
                 formats: params.formats,
                 useCache: params.useCache,
                 svgShortCircuit: params.svgShortCircuit,
                 // output image widths
-                widths: [
-                    w + 30,
-                    w * 2,
-                    w * 4
-                ],
+                widths: [w + 30, w * 2, w * 4],
                 filenameFormat: function (id, src, width, format, options) {
                     // Define custom filenames for generated images
                     // id: hash of the original image
@@ -41,34 +38,38 @@ export default {
                     // width: current width in px
                     // format: current file format
                     // options: set of options passed to the Image call
-                    const filename = src.split('/').slice(-1)[0].split('.')[0];
-                    return `${libdocUtils.slugify(filename)}-${id}-__${width}__.${format}`;
+                    const filename = src.split("/").slice(-1)[0].split(".")[0];
+                    return `${libdocUtils.slugify(
+                        filename
+                    )}-${id}-__${width}__.${format}`;
                 },
                 sharpOptions: {
-                    animated: true
+                    animated: true,
                 },
                 // transform: (sharp) => {
                 //     sharp.trim();
                 // },
                 // optional, attributes assigned on <img> nodes override these values
-                htmlOptions: params.htmlOptions
-            }
-        }
+                htmlOptions: params.htmlOptions,
+            };
+        },
     },
     filters: {
-        autoids: async function(content) {
+        autoids: async function (content) {
             let i = 0;
             const anchorsIds = [];
-            content = content.replace(/<([a-zA-Z][a-zA-Z0-9_-]*)\b[^>]*>(.*?)<\/\1>/g, function(m,m1,m2){
-                let newM = m;
-                if (libdocConfig.tocHtmlTags.includes(m1)) {
-                    // Add id to the specified html tags
-                    let slugifiedId = libdocUtils.slugify(m2);
-                    if (anchorsIds.includes(slugifiedId)) {
-                        slugifiedId += `-${i}`;
-                    }
-                    anchorsIds.push(slugifiedId);
-                    const markup = `
+            content = content.replace(
+                /<([a-zA-Z][a-zA-Z0-9_-]*)\b[^>]*>(.*?)<\/\1>/g,
+                function (m, m1, m2) {
+                    let newM = m;
+                    if (libdocConfig.tocHtmlTags.includes(m1)) {
+                        // Add id to the specified html tags
+                        let slugifiedId = libdocUtils.slugify(m2);
+                        if (anchorsIds.includes(slugifiedId)) {
+                            slugifiedId += `-${i}`;
+                        }
+                        anchorsIds.push(slugifiedId);
+                        const markup = `
                         <${m1} id="${slugifiedId}" pl-9="xs,sm">
                             <a  href="#${slugifiedId}"
                                 title="${m2}"
@@ -77,14 +78,15 @@ export default {
                                 <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
                             </a>
                     `;
-                    newM = m.replace(`<${m1}>`, markup);
-                    i++;
+                        newM = m.replace(`<${m1}>`, markup);
+                        i++;
+                    }
+                    return newM;
                 }
-                return newM;
-            });
+            );
             return content;
         },
-        embed: async function(src) {
+        embed: async function (src) {
             try {
                 const url = new URL(src);
                 const content = `
@@ -98,11 +100,14 @@ export default {
                 return content;
             } catch (e) {
                 console.log(`${src} is not a valid URL`);
-                return '';
+                return "";
             }
         },
-        cleanup: async function(content) {
-            content = content.replaceAll(`<table>`, `<div class="o-auto w-100 table-wrapper"><table>`);
+        cleanup: async function (content) {
+            content = content.replaceAll(
+                `<table>`,
+                `<div class="o-auto w-100 table-wrapper"><table>`
+            );
             content = content.replaceAll(`</table>`, `</table></div>`);
             content = content.replaceAll(`<p><div`, `<div`);
             content = content.replaceAll(`</div></p>`, `</div>`);
@@ -110,14 +115,14 @@ export default {
             content = content.replaceAll(`</aside></p>`, `</aside>`);
             return content;
         },
-        datePrefixText: async function(date) {
-            let text = '';
-            if (typeof date == 'string') {
+        datePrefixText: async function (date) {
+            let text = "";
+            if (typeof date == "string") {
                 text = libdocMessages.lastModified[libdocConfig.lang];
             }
             return text;
         },
-        dateString: async function(content) {
+        dateString: async function (content) {
             let theDay = content.getDate().toString();
             if (theDay.length == 1) theDay = `0${theDay}`;
             let theMonth = (content.getMonth() + 1).toString();
@@ -125,9 +130,12 @@ export default {
             const theYear = content.getFullYear().toString();
             return `${theYear}-${theMonth}-${theDay}`;
         },
-        toc: async function(content) {
-            const htmlTagsFound = libdocUtils.extractHtmlTagsFromString(content, libdocConfig.tocHtmlTags);
-            let tocMarkup = '';
+        toc: async function (content) {
+            const htmlTagsFound = libdocUtils.extractHtmlTagsFromString(
+                content,
+                libdocConfig.tocHtmlTags
+            );
+            let tocMarkup = "";
             if (htmlTagsFound.length > libdocConfig.tocMinTags) {
                 tocMarkup = `
                     <ol class="cgap-3em | m-0 pl-0 pb-5 o-auto | lh-1 | ls-none bwidth-1 bstyle-dashed bcolor-neutral-500 btwidth-0 brwidth-0"
@@ -140,7 +148,7 @@ export default {
                         maxh-200px="xs">`;
                 // Displaying the results
                 const anchorsIds = [];
-                htmlTagsFound.forEach(function(htmlTag, tagIndex) {
+                htmlTagsFound.forEach(function (htmlTag, tagIndex) {
                     let slugifiedId = libdocUtils.slugify(htmlTag.value);
                     if (anchorsIds.includes(slugifiedId)) {
                         slugifiedId += `-${tagIndex}`;
@@ -154,43 +162,50 @@ export default {
                             </a>
                         </li>`;
                 });
-                tocMarkup += '</ol>';
+                tocMarkup += "</ol>";
             }
             return tocMarkup;
-        }
+        },
     },
     collections: {
-        myTags: function(collectionsApi) {
+        myTags: function (collectionsApi) {
             const allData = collectionsApi.getAll();
             let finalData = [];
-            allData.forEach(function(item) {
-                if (typeof item.data.tags == 'object') {
-                    item.data.tags.forEach(function(tag) {
-                        if (!finalData.includes(tag) && tag != 'post') finalData.push(tag);
-                    })
+            allData.forEach(function (item) {
+                if (typeof item.data.tags == "object") {
+                    item.data.tags.forEach(function (tag) {
+                        if (!finalData.includes(tag) && tag != "post")
+                            finalData.push(tag);
+                    });
                 }
             });
             return finalData;
         },
-        postsByDateDescending: function(collectionsApi) {
-            return collectionsApi.getFilteredByTag("post").sort(function (a, b) {
-                //return a.date - b.date; // sort by date - ascending
-                return b.date - a.date; // sort by date - descending
-                //return a.inputPath.localeCompare(b.inputPath); // sort by path - ascending
-                //return b.inputPath.localeCompare(a.inputPath); // sort by path - descending
-            });
-        }
+        postsByDateDescending: function (collectionsApi) {
+            return collectionsApi
+                .getFilteredByGlob("content/blog/*.md")
+                .sort(function (a, b) {
+                    return b.date - a.date; // sort by date - descending
+                });
+        },
+        archivedPostsByDateDescending: function (collectionsApi) {
+            return collectionsApi
+                .getFilteredByGlob("content/archive/*.md")
+                .sort(function (a, b) {
+                    return b.date - a.date;
+                });
+        },
     },
     shortcodes: {
-        alert: async function(content, type, title) {
-            const validTypes = ['info', 'warning', 'success', 'danger'];
-            let markup = '',
+        alert: async function (content, type, title) {
+            const validTypes = ["info", "warning", "success", "danger"];
+            let markup = "",
                 titleAttribute = ``,
                 typeClass = ``;
-            if (typeof title == 'string') {
+            if (typeof title == "string") {
                 titleAttribute = `data-title="${title}"`;
             }
-            if (typeof type == 'string') {
+            if (typeof type == "string") {
                 if (validTypes.includes(type)) typeClass = `alert-${type}`;
             }
             markup = `
@@ -202,35 +217,39 @@ export default {
             `;
             return markup;
         },
-        icon: async function(iconName, iconSize) {
-            let markup = '';
+        icon: async function (iconName, iconSize) {
+            let markup = "";
             let isAnIcon = false;
-            icomoon.icons.forEach(function(iconData) {
+            icomoon.icons.forEach(function (iconData) {
                 if (iconData.properties.name == iconName) isAnIcon = true;
             });
             if (isAnIcon) {
                 const fontSizeParse = parseInt(iconSize);
-                let dsFontSize = '';
+                let dsFontSize = "";
                 if (!isNaN(fontSizeParse)) {
                     if (fontSizeParse < 11 && fontSizeParse > 0) {
                         dsFontSize = fontSizeParse;
                     } else {
-                        console.log(`icon shortcode "${iconName}" is a valid icon but "${fontSizeParse}" is not a valid icon size, icon size must be an integer from 1 to 10`)
+                        console.log(
+                            `icon shortcode "${iconName}" is a valid icon but "${fontSizeParse}" is not a valid icon size, icon size must be an integer from 1 to 10`
+                        );
                     }
                 }
                 markup = `<span class="icon-${iconName} fs-${dsFontSize}"></span>`;
             } else {
-                console.log(`icon shortcode "${iconName}" is not a valid icon, see https://eleventy-libdoc.netlify.app/creating-content/widgets/icons/`)
+                console.log(
+                    `icon shortcode "${iconName}" is not a valid icon, see https://eleventy-libdoc.netlify.app/creating-content/widgets/icons/`
+                );
             }
             return markup;
         },
-        iconCard: async function(mainText, description, iconName) {
-            let markup = '';
-            if (typeof mainText == 'string' && typeof description == 'string') {
+        iconCard: async function (mainText, description, iconName) {
+            let markup = "";
+            if (typeof mainText == "string" && typeof description == "string") {
                 let isAnIcon = false,
-                    finalIconName = 'check-circle';
-                if (typeof iconName == 'string') {
-                    icomoon.icons.forEach(function(iconData) {
+                    finalIconName = "check-circle";
+                if (typeof iconName == "string") {
+                    icomoon.icons.forEach(function (iconData) {
                         if (iconData.properties.name == iconName) {
                             finalIconName = iconName;
                             isAnIcon = true;
@@ -238,7 +257,9 @@ export default {
                     });
                 }
                 if (!isAnIcon && iconName !== undefined) {
-                    console.log(`iconCard shortcode: ${iconName} is not a valid icon, default ${finalIconName} applied.`);
+                    console.log(
+                        `iconCard shortcode: ${iconName} is not a valid icon, default ${finalIconName} applied.`
+                    );
                 }
                 markup = `
                     <aside class="widget widget-iconCard">
@@ -251,11 +272,13 @@ export default {
                         </p>
                     </aside>`;
             } else {
-                console.log(`iconCard shortcode content: "${content}" wrong format, must specify at least main text and description string fields.`);
+                console.log(
+                    `iconCard shortcode content: "${content}" wrong format, must specify at least main text and description string fields.`
+                );
             }
             return markup;
         },
-        embed: async function(src, height) {
+        embed: async function (src, height) {
             try {
                 const url = new URL(src);
                 const content = `
@@ -270,19 +293,19 @@ export default {
                 return content;
             } catch (e) {
                 console.log(`${src} is not a valid URL`);
-                return '';
+                return "";
             }
         },
-        icomoon: async function() {
+        icomoon: async function () {
             const w = libdocSystem.icomoonIconSize;
             let markup = `
                 <aside class="widget widget-icomoon | mt-10 mb-10"
                     mt-7="xs"
                     mb-7="xs">
                     <ul class="d-flex fw-wrap gap-7 | p-0 | ls-none" rgap-10="sm,md">`;
-            icomoon.icons.forEach(function(iconData) {
-                let pathsMarkup = '';
-                iconData.icon.paths.forEach(function(path) {
+            icomoon.icons.forEach(function (iconData) {
+                let pathsMarkup = "";
+                iconData.icon.paths.forEach(function (path) {
                     pathsMarkup += path;
                 });
                 markup += `
@@ -293,47 +316,77 @@ export default {
                         <code class="fs-2 tws-balance ta-center" fs-1="xs">${iconData.properties.name}</code>
                     </li>`;
             });
-            markup += '</ul></aside>';
+            markup += "</ul></aside>";
             return markup;
         },
-        sandbox: async function(content, sandboxTitle) {
-            const   code = libdocUtils.HTMLEncode(content.replace(/[\n\r]/, '')),
-                    title = typeof sandboxTitle == `string` ? sandboxTitle : libdocMessages.sandbox[libdocConfig.lang],
-                    iframeAttribute = `srcdoc="${code}"`,
-                    enableSwitchId = libdocUtils.generateRandomId(),
-                    iframeCommands = `<header class="d-flex jc-space-between | pl-5" style="height: 58px">
+        sandbox: async function (content, sandboxTitle) {
+            const code = libdocUtils.HTMLEncode(content.replace(/[\n\r]/, "")),
+                title =
+                    typeof sandboxTitle == `string`
+                        ? sandboxTitle
+                        : libdocMessages.sandbox[libdocConfig.lang],
+                iframeAttribute = `srcdoc="${code}"`,
+                enableSwitchId = libdocUtils.generateRandomId(),
+                iframeCommands = `<header class="d-flex jc-space-between | pl-5" style="height: 58px">
                             <div class="d-flex ai-center | fvs-wght-400 fs-3 | c-neutral-500">
                                 srcdoc
                             </div>
                         </header>`;
-            return libdocUtils.templates.sandbox({iframeAttribute, iframeCommands, title, code, enableSwitchId});
+            return libdocUtils.templates.sandbox({
+                iframeAttribute,
+                iframeCommands,
+                title,
+                code,
+                enableSwitchId,
+            });
         },
-        sandboxFile: async function(content, permalink, sandboxTitle) {
-            const   code = libdocUtils.HTMLEncode(content),
-                    iframeAttribute = `src="${permalink}"`,
-                    title = typeof sandboxTitle == `string` ? sandboxTitle : libdocMessages.sandbox[libdocConfig.lang],
-                    enableSwitchId = libdocUtils.generateRandomId(),
-                    iframeCommands = `<header class="d-flex jc-space-between gap-5 | pl-5 pr-5" style="height: 58px">
+        sandboxFile: async function (content, permalink, sandboxTitle) {
+            const code = libdocUtils.HTMLEncode(content),
+                iframeAttribute = `src="${permalink}"`,
+                title =
+                    typeof sandboxTitle == `string`
+                        ? sandboxTitle
+                        : libdocMessages.sandbox[libdocConfig.lang],
+                enableSwitchId = libdocUtils.generateRandomId(),
+                iframeCommands = `<header class="d-flex jc-space-between gap-5 | pl-5 pr-5" style="height: 58px">
                             <a  href="${permalink}"
                                 target="_blank"
-                                title="${libdocMessages.openInANewTab[libdocConfig.lang]}"
+                                title="${
+                                    libdocMessages.openInANewTab[
+                                        libdocConfig.lang
+                                    ]
+                                }"
                                 class="d-flex ai-center gap-1 | p-0 | fvs-wght-400 fs-2 tt-uppercase td-none | sandbox__permalink"
                                 fs-2="xs">
-                                <span class="fvs-wght-400 | c-neutral-300">${libdocMessages.open[libdocConfig.lang]}</span>
+                                <span class="fvs-wght-400 | c-neutral-300">${
+                                    libdocMessages.open[libdocConfig.lang]
+                                }</span>
                                 <span class="icon-arrow-square-out c-neutral-500"></span>
                             </a>
                             <div class="d-flex gap-7">
                                 <button type="button"
                                     class="d-flex ai-center | p-0 | fvs-wght-400 fs-2 tt-uppercase | bc-0 c-neutral-300 b-0 cur-pointer | sandbox__reload">
-                                    <span class="o-hidden | to-ellipsis ws-nowrap">${libdocMessages.reload[libdocConfig.lang]}</span>
+                                    <span class="o-hidden | to-ellipsis ws-nowrap">${
+                                        libdocMessages.reload[libdocConfig.lang]
+                                    }</span>
                                 </button>
                                 <button type="button"
                                     class="d-flex ai-center | p-0 | fvs-wght-400 fs-2 tt-uppercase | bc-0 c-neutral-300 b-0 cur-pointer | sandbox__copy_url">
-                                    <span class="o-hidden | to-ellipsis ws-nowrap">${libdocMessages.copyURL[libdocConfig.lang]}</span>
+                                    <span class="o-hidden | to-ellipsis ws-nowrap">${
+                                        libdocMessages.copyURL[
+                                            libdocConfig.lang
+                                        ]
+                                    }</span>
                                 </button>
                             </div>
                         </header>`;
-            return libdocUtils.templates.sandbox({iframeAttribute, iframeCommands, title, code, enableSwitchId});
-        }
-    }
-}
+            return libdocUtils.templates.sandbox({
+                iframeAttribute,
+                iframeCommands,
+                title,
+                code,
+                enableSwitchId,
+            });
+        },
+    },
+};
