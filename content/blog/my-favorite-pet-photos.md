@@ -2,11 +2,11 @@
 title: My favorite pet photos!
 description: My favorite photos of our pets 🐾
 layout: libdoc_page.liquid
-permalink: "{{ libdocConfig.blogSlug }}/my-favorite-pet-photos/index.html"
+permalink: "{{ libdocConfig.blogSlug }}/{{page.fileSlug}}/index.html"
 tags:
-  - pets
-  - pictures
-  - post
+    - pets
+    - pictures
+    - post
 date: git Last Modified
 ogImageUrl: /assets/blog/blogroll-photos/Zoey-Face.jpg
 ---

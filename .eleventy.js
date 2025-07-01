@@ -3,6 +3,7 @@ import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 // END 11TY imports
 
 // START LibDoc imports
@@ -19,6 +20,24 @@ export default function (eleventyConfig) {
         eleventyImageTransformPlugin,
         libdocFunctions.pluginsParameters.eleventyImageTransform()
     );
+    eleventyConfig.addPlugin(feedPlugin, {
+        type: "rss",
+        outputPath: "/rss.xml",
+        collection: {
+            name: "postsByDateDescending",
+            limit: 10,
+        },
+        metadata: {
+            language: "en",
+            title: "TerabyteTiger's Blog",
+            subtitle: libdocConfig.blogDescription,
+            base: "https://terabytetiger.com/",
+            author: {
+                name: "Tyler VanBlargan",
+                email: "",
+            },
+        },
+    });
     // END PLUGINS
 
     // START FILTERS
