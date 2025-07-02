@@ -90,7 +90,7 @@ Docs: [React](https://reactjs.org/) | [Angular](https://angular.io/) | [Vue](htt
 
 ##### Gatsby & Friends
 
-![](../..\assets\blog\400\TheCloudAteMyImage400.png)
+![](../../assets/blog/400/TheCloudAteMyImage400.png)
 
 (The following holds true for any of the three frameworks above. Gatsby pertains to React, but feel free to swap Gatbys for Gridsome and React for Vue \[Or any other child/parent framework pair that you want])
 
