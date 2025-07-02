@@ -14,7 +14,7 @@ tags:
 
 ## Tools
 
-https://calvin.sh/tools/dot-counter/
+[https://calvin.sh/tools/dot-counter/](https://calvin.sh/tools/dot-counter/)
 
 ## Sites
 
