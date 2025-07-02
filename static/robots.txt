@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Host: https://terabytetiger.com/
+
+Sitemap: https://terabytetiger.com/sitemap.xml

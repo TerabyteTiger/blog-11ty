@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ pageTitle }}</title>
     <link rel="canonical" content="https://terabytetiger.com{{ page.url }}" />
-
+    {%- comment -%} Umami Tracking Code  {%- endcomment -%}
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="8c6d4024-15b3-4331-9ad9-3cf416e0e89c"></script>
     {% comment %} <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> {% endcomment %}
 
     <meta itemprop="name" content="{{ pageTitle }}">
@@ -227,7 +228,6 @@
                     {% endif %}
                 </menu>
                 
-                {% if collections.post.size > 0 %}
                     <a  href="/{{ libdocConfig.blogSlug }}/"
                         id="nav_primary_blog_link"
                         {% if pageUrlSplit[1] == libdocConfig.blogSlug %}
@@ -237,9 +237,7 @@
                         {% comment %} <span class="icon-tag-simple | c-primary-500"></span> {% endcomment %}
                         {{ libdocConfig.blogTitle }}
                     </a>
-                {% endif %}
 
-                {% if collections.post.size > 0 %}
                     <a  href="/{{ libdocConfig.archiveSlug }}/"
                         id="nav_primary_blog_link"
                         {% if pageUrlSplit[1] == libdocConfig.archiveSlug %}
@@ -249,7 +247,6 @@
                         {% comment %} <span class="icon-tag-simple | c-primary-500"></span> {% endcomment %}
                         {{ libdocConfig.archiveTitle}}
                     </a>
-                {% endif %}
 
                 {% if collections.myTags.size > 0 and libdocConfig.displayTagsListLink %}
                     <a  href="/tags/"

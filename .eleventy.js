@@ -4,6 +4,7 @@ import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import sitemap from "@quasibit/eleventy-plugin-sitemap";
 // END 11TY imports
 
 // START LibDoc imports
@@ -38,6 +39,12 @@ export default function (eleventyConfig) {
             },
         },
     });
+    eleventyConfig.addPlugin(sitemap, {
+        lastModifiedProperty: "modified",
+        sitemap: {
+            hostname: "https://terabytetiger.com",
+        },
+    });
     // END PLUGINS
 
     // START FILTERS
@@ -57,6 +64,10 @@ export default function (eleventyConfig) {
 
     // START COLLECTIONS
     eleventyConfig.addCollection("myTags", libdocFunctions.collections.myTags);
+    eleventyConfig.addCollection(
+        "archiveTags",
+        libdocFunctions.collections.archiveTags
+    );
     eleventyConfig.addCollection(
         "postsByDateDescending",
         libdocFunctions.collections.postsByDateDescending
@@ -95,6 +106,8 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("core/assets");
     eleventyConfig.addPassthroughCopy("favicon.png");
+    // Specifically dump the static folder to "/" instead of "/static/"
+    eleventyConfig.addPassthroughCopy({ "static/": "/" });
     // END FILE COPY
 
     return {

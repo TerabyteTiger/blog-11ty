@@ -169,7 +169,23 @@ export default {
     },
     collections: {
         myTags: function (collectionsApi) {
-            const allData = collectionsApi.getAll();
+            const allData =
+                collectionsApi.getFilteredByGlob("content/blog/*.md");
+            let finalData = [];
+            allData.forEach(function (item) {
+                if (typeof item.data.tags == "object") {
+                    item.data.tags.forEach(function (tag) {
+                        if (!finalData.includes(tag) && tag != "post")
+                            finalData.push(tag);
+                    });
+                }
+            });
+            return finalData;
+        },
+        archiveTags: function (collectionsApi) {
+            const allData = collectionsApi.getFilteredByGlob(
+                "content/archive/*.md"
+            );
             let finalData = [];
             allData.forEach(function (item) {
                 if (typeof item.data.tags == "object") {
