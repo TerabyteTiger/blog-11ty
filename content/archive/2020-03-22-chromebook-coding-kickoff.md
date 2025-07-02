@@ -22,7 +22,7 @@ When researching Linux on Chromebooks, it will often be under the title of “Cr
 
 Containers are “buckets” where a system's code runs. Think of them as cardboard boxes where each of your Operating Systems run within your Chromebook. Chromebooks support up to 3 of these Containers:
 
-![3 boxes. One for each of Android, Linux, and Chrome](../..\assets\blog\400\TheCloudAteMyImage400.png)
+![3 boxes. One for each of Android, Linux, and Chrome](../../assets/blog/400/TheCloudAteMyImage400.png)
 
 Similar to how Android runs within CrOS (Chrome OS), Linux runs within its own container isolated from Android and CrOS.
 
