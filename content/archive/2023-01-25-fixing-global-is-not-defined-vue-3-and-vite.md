@@ -6,9 +6,9 @@ date: "2023-01-25"
 permalink: "{{ libdocConfig.archiveSlug }}/{{date}}-{{page.fileSlug}}/index.html"
 description: "How to fix a `ReferenceError: global is not defined` error when using Vite, Vue 3, and Piana"
 tags:
-    - Vue
-    - Vite
-    - Piana
+    - vue
+    - vite
+    - piana
 ---
 
 While starting my first full project with [Vite](https://vitejs.dev/) + [Vue 3](https://vuejs.org/) after trying to start using [Pinia](https://pinia.vuejs.org/), I as getting an error:
@@ -27,10 +27,10 @@ After commenting lines in and out, I was able to trace down that the root of the
 In my case it seems like the only change that was necessary is to add this to the top of `main.js`:
 
 ```js {codeTitle: "main.js"}
-import process from "process/browser"
-window.process = process
+import process from "process/browser";
+window.process = process;
 
-window.global = window
+window.global = window;
 // Rest of your file goes here 👇🏻
 ```
 

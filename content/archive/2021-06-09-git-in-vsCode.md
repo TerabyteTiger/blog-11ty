@@ -6,7 +6,6 @@ date: "2021-06-09"
 series: "Git Crash Course: Zero to Pull Request"
 description: Sometimes you don't want to have to bust out the terminal and do everything in Visual Studio Code instead. Learn how to commit to GitHub from VS Code!
 tags:
-    - CodeNewbie
     - git
     - github
     - tutorial

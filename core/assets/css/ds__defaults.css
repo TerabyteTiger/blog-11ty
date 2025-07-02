@@ -123,7 +123,7 @@ body {
 }
 html,
 .o-auto {
-    scrollbar-color: var(--ita-colors-primary-500) transparent;
+    scrollbar-color: var(--ita-colors-primary-700) transparent;
     scrollbar-width: 10px;
 }
 button:disabled {
@@ -147,7 +147,7 @@ main *::target-text {
 }
 main *::selection {
     text-shadow: none;
-    background-color: var(--ita-colors-primary-500);
+    background-color: var(--ita-colors-primary-700);
     color: var(--ita-colors-primary-100);
 }
 main > * {
@@ -198,7 +198,7 @@ main h3:target a,
 main h4:target a,
 main h5:target a,
 main h6:target a {
-    background-color: var(--ita-colors-primary-500);
+    background-color: var(--ita-colors-primary-700);
     color: var(--ita-colors-primary-100);
     border-color: var(--ita-colors-primary-100);
 }
@@ -287,7 +287,7 @@ main a {
 }
 main a:link,
 main a:visited {
-    color: var(--ita-colors-primary-500);
+    color: var(--ita-colors-primary-700);
     font-variation-settings: "wght" 500, "MONO" 0;
     letter-spacing: -0.03em;
     /* text-shadow: none; */
@@ -437,7 +437,7 @@ main > ol:not(:has(ul)) li > ol > li::before {
     font-variation-settings: "wght" 500, "MONO" 1, "CASL" 1;
     padding: 0em 0em 0em 0.5em;
     background-color: var(--ita-colors-primary-100);
-    color: var(--ita-colors-primary-500);
+    color: var(--ita-colors-primary-700);
     border-bottom: 1px dashed var(--ita-colors-neutral-500);
     /* content: counters(listItem, '.') '.';
     position: absolute;
@@ -447,18 +447,18 @@ main > ol:not(:has(ul)) li > ol > li::before {
     font-size: var(--ita-fontSizes-2);
     padding: 0em 1em;
     background-color: var(--ita-colors-neutral-100);
-    color: var(--ita-colors-primary-500);
+    color: var(--ita-colors-primary-700);
     border-radius: 100px;
     line-height: 2em;
     letter-spacing: -0.1em;
-    border: 1px dotted var(--ita-colors-primary-500);
+    border: 1px dotted var(--ita-colors-primary-700);
     margin-top: 0.1em; */
 }
 main > ol:not(:has(ul)) > li {
-    border-left: 1px dashed var(--ita-colors-primary-500);
+    border-left: 1px dashed var(--ita-colors-primary-700);
 }
 main > ol:not(:has(ul)) > li::before {
-    background-color: var(--ita-colors-primary-500);
+    background-color: var(--ita-colors-primary-700);
     color: var(--ita-colors-neutral-100);
     margin-top: 0;
     padding: 0.2em 1em;
@@ -498,7 +498,7 @@ main > ol ul > li::after {
     left: var(--ita-spacings-4);
     width: var(--ita-spacings-2);
     height: var(--ita-spacings-2);
-    background-color: var(--ita-colors-primary-500);
+    background-color: var(--ita-colors-primary-700);
     border-radius: 100%;
 }
 /* Mixed list type */
@@ -528,7 +528,7 @@ main > ol:has(ul) {
 main > ol:has(ul) > li {
     counter-increment: mixedItem;
     padding-left: var(--ita-spacings-6);
-    border-left: 1px dashed var(--ita-colors-primary-500);
+    border-left: 1px dashed var(--ita-colors-primary-700);
 }
 main > ol:has(ul) > li:before  {
     content: counter(mixedItem) '.';
@@ -538,7 +538,7 @@ main > ol:has(ul) > li:before  {
     font-variation-settings: "wght" 700, "MONO" 1, "CASL" 1;
     font-size: var(--ita-fontSizes-2);
     padding: 0.2em 1em;
-    background-color: var(--ita-colors-primary-500);
+    background-color: var(--ita-colors-primary-700);
     color: var(--ita-colors-neutral-100);
     border-radius: 100px;
     line-height: 2em;
@@ -547,7 +547,7 @@ main > ol:has(ul) > li:before  {
 }
 main > *:not(header) li::marker {
     font-variation-settings: "wght" 500, "MONO" 1, "CASL" 1;
-    color: var(--ita-colors-primary-500);
+    color: var(--ita-colors-primary-700);
     font-size: var(--ita-fontSizes-3);
 }
 
@@ -670,14 +670,14 @@ main dl dt {
     font-variation-settings: "wght" 500, "MONO" 0;
     margin-bottom: 0.2em;
     letter-spacing: -0.04em;
-    color: var(--ita-colors-primary-500);
+    color: var(--ita-colors-primary-700);
 }
 main dl dd {
     margin-left: var(--ita-spacings-2);
     margin-bottom: 1em;
     line-height: 1.6em;
     padding-left: var(--ita-spacings-5);
-    border-left: 1px dashed var(--ita-colors-primary-500);
+    border-left: 1px dashed var(--ita-colors-primary-700);
 }
 /* DETAILS */
 main > details summary,
@@ -694,7 +694,7 @@ main > details summary::before,
 main > *:not(header) details summary::before {
     content: '\e914';
     font-family: icomoon;
-    color: var(--ita-colors-primary-500);
+    color: var(--ita-colors-primary-700);
     font-size: var(--ita-fontSizes-6);
 }
 main > details[open] summary::before,
@@ -849,7 +849,7 @@ main button[type="button"].btn:active {
 }
 main a.btn.btn-primary,
 main button[type="button"].btn.btn-primary {
-    background-color: var(--ita-colors-primary-500);
+    background-color: var(--ita-colors-primary-700);
     color: var(--ita-colors-neutral-100);
     border-color: var(--ita-colors-neutral-100);
 }
@@ -939,10 +939,10 @@ main .alert[data-title]::before {
 main .alert.alert-info {
     background-color: var(--ita-colors-neutral-100);
     color: var(--ita-colors-primary-900);
-    border-color: var(--ita-colors-primary-500);
+    border-color: var(--ita-colors-primary-700);
 }
 main .alert.alert-info::before {
-    color: var(--ita-colors-primary-500);
+    color: var(--ita-colors-primary-700);
     border-color: currentColor;
 }
 main .alert.alert-success {
@@ -999,7 +999,7 @@ main .__search-occurrence {
 #nav_primary_blog_link::after {
     content: '';
     display: flex;
-    background-color: var(--ita-colors-primary-500);
+    background-color: var(--ita-colors-primary-700);
     width: var(--ita-spacings-2);
     min-width: var(--ita-spacings-2);
     aspect-ratio: 1;
@@ -1010,7 +1010,7 @@ main .__search-occurrence {
 }
 #nav_primary_container [aria-current="page"],
 .nav_primary [aria-current="page"] {
-    color: var(--ita-colors-primary-500);
+    color: var(--ita-colors-primary-700);
 }
 #nav_primary > ol > li ol li,
 .nav_primary > ol > li ol li {
@@ -1212,7 +1212,7 @@ main .widget + .widget {
     transition: all 300ms;
 }
 .__hover-1:hover {
-    background-color: var(--ita-colors-primary-500);
+    background-color: var(--ita-colors-primary-700);
     color: var(--ita-colors-primary-100);
     border-color: var(--ita-colors-primary-100);
 }

@@ -6,8 +6,8 @@ date: "2025-03-19"
 permalink: "{{ libdocConfig.archiveSlug }}/{{date}}-{{page.fileSlug}}/index.html"
 description: "Just a reminder to double check your versions when you run into a weird error on the server and not on your machine"
 tags:
-    - Servers
-    - Node.js
+    - servers
+    - node.js
 ---
 
 Did you know that `String.Prototype.replaceAll()` was added in Node v15? Because as of this morning I do!

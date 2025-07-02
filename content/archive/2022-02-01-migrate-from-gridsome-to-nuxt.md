@@ -57,8 +57,8 @@ Unlike in Gridsome, Nuxt doesn't require us to import and wrap our pages in a `<
 ```vue
 <script>
 export default {
-  layout: "yourLayoutName",
-}
+    layout: "yourLayoutName",
+};
 
 // source: https://nuxtjs.org/docs/directory-structure/layouts
 </script>
@@ -73,38 +73,38 @@ In Gridsome, you have a `metaInfo` object which takes a `title`, `meta` array, a
 
 <script>
 export default {
-  head() {
-    return {
-      title: "Posts",
-      meta: [
-        ...this.meta,
-        { name: "twitter:label1", content: "Written by" },
-        { name: "twitter:data1", content: "Tyler VanBlargan" },
-      ],
-      link: [
-        {
-          hid: "canonical",
-          rel: "canonical",
-          href: `https://terabytetiger.com/lessons`,
-        },
-      ],
-    }
-  },
-  computed: {
-    meta() {
-      const metaData = {
-        type: "article",
-        title: "Blog",
-        description:
-          "Terabyte Tiger's articles covering web development topics",
-        url: `https://terabytetiger.com/lessons`,
-      }
-      return getSiteMeta(metaData)
-      // Learn more about the getSiteMeta() function here:
-      // https://redfern.dev/articles/adding-social-media-seo-meta-data-using-nuxt-content/
+    head() {
+        return {
+            title: "Posts",
+            meta: [
+                ...this.meta,
+                { name: "twitter:label1", content: "Written by" },
+                { name: "twitter:data1", content: "Tyler VanBlargan" },
+            ],
+            link: [
+                {
+                    hid: "canonical",
+                    rel: "canonical",
+                    href: `https://terabytetiger.com/lessons`,
+                },
+            ],
+        };
     },
-  },
-}
+    computed: {
+        meta() {
+            const metaData = {
+                type: "article",
+                title: "Blog",
+                description:
+                    "Terabyte Tiger's articles covering web development topics",
+                url: `https://terabytetiger.com/lessons`,
+            };
+            return getSiteMeta(metaData);
+            // Learn more about the getSiteMeta() function here:
+            // https://redfern.dev/articles/adding-social-media-seo-meta-data-using-nuxt-content/
+        },
+    },
+};
 </script>
 ```
 
@@ -156,33 +156,33 @@ The convenient part of the content module is that it locates itself within the s
 <script>
 // This is my "All Posts" page
 export default {
-  async asyncData({ $content, params, error }) {
-    const lessons = await $content("lessons", { deep: true })
-      .only([
-        "id",
-        "title",
-        "description",
-        "excerpt",
-        "cover_image",
-        "path",
-        "date_published",
-        "emoji",
-        "updated",
-      ])
-      .where({
-        published: true,
-      })
-      .sortBy("date_published", "desc")
-      .fetch()
-      .catch(() => {
-        error({ statusCode: 409, message: "Error Fetching posts" })
-      })
+    async asyncData({ $content, params, error }) {
+        const lessons = await $content("lessons", { deep: true })
+            .only([
+                "id",
+                "title",
+                "description",
+                "excerpt",
+                "cover_image",
+                "path",
+                "date_published",
+                "emoji",
+                "updated",
+            ])
+            .where({
+                published: true,
+            })
+            .sortBy("date_published", "desc")
+            .fetch()
+            .catch(() => {
+                error({ statusCode: 409, message: "Error Fetching posts" });
+            });
 
-    return {
-      lessons,
-    }
-  },
-}
+        return {
+            lessons,
+        };
+    },
+};
 </script>
 ```
 
@@ -190,21 +190,21 @@ And within our `_slug.vue` pages we can grab each page in a similar way:
 
 ```vue
 <template>
-  <article>
-    <!-- 
+    <article>
+        <!-- 
       Pass your const value as the document 
       and it will render automagically!
     -->
-    <nuxt-content class="prose" :document="lesson" />
-  </article>
+        <nuxt-content class="prose" :document="lesson" />
+    </article>
 </template>
 <script>
 export default {
-  async asyncData({ $content, params }) {
-    const lesson = await $content("lessons", params.slug).fetch()
-    return { lesson }
-  },
-}
+    async asyncData({ $content, params }) {
+        const lesson = await $content("lessons", params.slug).fetch();
+        return { lesson };
+    },
+};
 </script>
 ```
 

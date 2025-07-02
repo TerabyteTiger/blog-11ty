@@ -6,9 +6,9 @@ date: "2024-06-07"
 permalink: "{{ libdocConfig.archiveSlug }}/{{date}}-{{page.fileSlug}}/index.html"
 description: "After poking around with Flutter a few times but getting caught up in all the extra mobile setup and configuration, Google IDX finally provided an entry that removed the frustrations that were stopping me from working with Flutter. "
 tags:
-    - Mobile
-    - Flutter
-    - Development
+    - mobile
+    - flutter
+    - development
 ---
 
 _This post is not sponsored, and I am not an affiliate_

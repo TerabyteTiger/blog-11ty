@@ -6,7 +6,6 @@ description: Learn how to use an array of colors with v-for to generate a colore
 cover_image: ../../assets/archive/blogImgs/cover-images/vue-rainbow.png
 tags:
     - vue
-    - codeNewbie
 date: "2019-08-28"
 twitter_image: ../../assets/archive/blogImgs/cover-images/vue-rainbow.png
 permalink: "{{ libdocConfig.archiveSlug }}/{{date}}-{{page.fileSlug}}/index.html"
@@ -14,10 +13,10 @@ permalink: "{{ libdocConfig.archiveSlug }}/{{date}}-{{page.fileSlug}}/index.html
 
 This post will cover:
 
-- A brief overview of `v-for`
-- Using `v-for` to display items from an array
-- Adding alternating colors to the items
-- Adding multiple colors to the items
+-   A brief overview of `v-for`
+-   Using `v-for` to display items from an array
+-   Adding alternating colors to the items
+-   Adding multiple colors to the items
 
 _Note: I'll be using `<template>` syntax for all code snippets here_
 
@@ -35,9 +34,9 @@ This is what a general template for `v-for` would look like for an array of item
 
 ```html
 <ul>
-  <li v-for="(item, index) in itemList" v-bind:key="index">
-    {{index}} - {{item}}
-  </li>
+    <li v-for="(item, index) in itemList" v-bind:key="index">
+        {{index}} - {{item}}
+    </li>
 </ul>
 ```
 
@@ -131,11 +130,11 @@ Line by line review:
 
 `backgroundColor: colors[index % 2]`
 
-- `index % 2` - If you've never seen the [Modulo (or Remainder)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder) operator before, this might look strange to you. What happens here is the number after the `%` is removed from the number before it until it cannot be subtracted out and result in a non-negative number.
+-   `index % 2` - If you've never seen the [Modulo (or Remainder)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder) operator before, this might look strange to you. What happens here is the number after the `%` is removed from the number before it until it cannot be subtracted out and result in a non-negative number.
 
 i.e) `7 % 3` => `7 - 3 = 4` => `4 - 3 = 1` => 3 cannot be removed from 1, so `7 % 3` will return `1`
 
-- `backgroundColor: colors[index % 2]` - The background color will be set based on what value is returned from our colors array. In this case, colors[0] will return `rebeccapurple` and colors[1] will return `#B22222`.
+-   `backgroundColor: colors[index % 2]` - The background color will be set based on what value is returned from our colors array. In this case, colors[0] will return `rebeccapurple` and colors[1] will return `#B22222`.
 
 Current State:
 <a class="dev" href="https://codesandbox.io/s/v-for-example-dn9cb">Codesandbox</a>

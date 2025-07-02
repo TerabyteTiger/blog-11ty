@@ -9,10 +9,9 @@ twitter_image: ../../assets/archive/blogImgs/cover-images/canonicalURL-DEV.png
 permalink: "{{ libdocConfig.archiveSlug }}/{{date}}-{{page.fileSlug}}/index.html"
 series: Intro to SEO
 tags:
-    - SEO
-    - Webdev
-    - Blog
-    - Blogging
+    - seo
+    - webdev
+    - blogging
 ---
 
 ## What is a canonical URL?

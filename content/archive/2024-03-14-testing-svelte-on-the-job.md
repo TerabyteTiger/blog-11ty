@@ -6,7 +6,7 @@ date: "2024-03-14"
 permalink: "{{ libdocConfig.archiveSlug }}/{{date}}-{{page.fileSlug}}/index.html"
 description: "A quick summary of my breif time testing Svelte to build an internal tool for work."
 tags:
-    - Svelte
+    - svelte
 ---
 
 ## Background

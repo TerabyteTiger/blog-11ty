@@ -7,9 +7,9 @@ updated: "2025-05-16"
 permalink: "{{ libdocConfig.archiveSlug }}/{{date}}-{{page.fileSlug}}/index.html"
 description: "Notes on some of the many commands I've tried while setting up a Raspberry pi as a Jellyfin home media server with Docker."
 tags:
-    - Home Server
-    - Raspberry Pi
-    - Linux
+    - home server
+    - raspberry pi
+    - linux
 ---
 
 ## Brief Intro

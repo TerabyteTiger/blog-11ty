@@ -159,9 +159,9 @@ Notably, there are different ways to specify versions in package.json. Some of t
 }
 ```
 
-- specific will install exactly version 1.0.3
-- tilde will install any patches to the minor version. In other words, the third decimal can change, but 1.3.0 will not be installed.
-- caret will install minor changes and patches. In other words, the second and third decimal can change, but 2.0.0 will not be installed.
+-   specific will install exactly version 1.0.3
+-   tilde will install any patches to the minor version. In other words, the third decimal can change, but 1.3.0 will not be installed.
+-   caret will install minor changes and patches. In other words, the second and third decimal can change, but 2.0.0 will not be installed.
 
 These are all useful for different situations - but that's a post for another day!
 

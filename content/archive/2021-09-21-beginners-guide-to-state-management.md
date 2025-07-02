@@ -9,7 +9,6 @@ published: true
 description: What is state management and what problem does state management solve for developers building an application?
 tags:
     - beginner
-    - codeNewbie
 ---
 
 ## What is state management?
@@ -28,9 +27,9 @@ Another instance where state management commonly comes into play is developing w
 
 ### State Management for frameworks
 
-- [Vuex](https://vuex.vuejs.org/) for Vue
-- [Redux](https://redux.js.org/) for React (This is usable with other JS frameworks as well, but is often the recommended option for React)
-- [svelte/store](https://svelte.dev/docs#svelte_store) for Svelte
+-   [Vuex](https://vuex.vuejs.org/) for Vue
+-   [Redux](https://redux.js.org/) for React (This is usable with other JS frameworks as well, but is often the recommended option for React)
+-   [svelte/store](https://svelte.dev/docs#svelte_store) for Svelte
 
 ## A real world example of state management
 
@@ -38,25 +37,25 @@ Consider this example from my recent [13Kjs gamejam entry - Spacebar's Space Bar
 
 ```js
 let state = {
-  ingredients: {
-    //... Removing for brevity
-  },
-  money: 15,
-  debt: 150,
-  interest: 0,
-  difficulty: "short",
-  day: 0,
-  message: "",
-  customersToday: 0,
-  customersScheduled: 2,
-}
+    ingredients: {
+        //... Removing for brevity
+    },
+    money: 15,
+    debt: 150,
+    interest: 0,
+    difficulty: "short",
+    day: 0,
+    message: "",
+    customersToday: 0,
+    customersScheduled: 2,
+};
 ```
 
 This is the first thing I do in my `game.js` file, creating an initial state for the application to exist in and use. A little later on I define the function `updateMoney()` which updates the user interface to show the amount of money on hand.
 
 ```js
 function updateMoney() {
-  document.querySelector("#money").innerHTML = state.money
+    document.querySelector("#money").innerHTML = state.money;
 }
 ```
 
@@ -64,14 +63,14 @@ Now, regardless of how the user is gaining/spending money, afterwards I call `up
 
 ```js
 function shareVictory() {
-  // share to twitter using the twitter intent to tweet url config
-  window.open(
-    `https://twitter.com/intent/tweet?text=I%20just%20beat%20Spacebar%27s%20Space%20bar%20on%20${state.difficulty}%20in%20${state.day}%20days%21%20Can%20you%20finish%20faster%3F%20%0A%0ACreated%20by%20%40terabytetiger%0A%0Ahttps%3A%2F%2Fspacebar.terabytetiger.com%2F`,
-    "newwindow",
-    "width=500, height=300, top=" +
-      (window.innerHeight - 300) / 2 +
-      ", left=" +
-      (window.innerWidth - 500) / 2
-  )
+    // share to twitter using the twitter intent to tweet url config
+    window.open(
+        `https://twitter.com/intent/tweet?text=I%20just%20beat%20Spacebar%27s%20Space%20bar%20on%20${state.difficulty}%20in%20${state.day}%20days%21%20Can%20you%20finish%20faster%3F%20%0A%0ACreated%20by%20%40terabytetiger%0A%0Ahttps%3A%2F%2Fspacebar.terabytetiger.com%2F`,
+        "newwindow",
+        "width=500, height=300, top=" +
+            (window.innerHeight - 300) / 2 +
+            ", left=" +
+            (window.innerWidth - 500) / 2
+    );
 }
 ```

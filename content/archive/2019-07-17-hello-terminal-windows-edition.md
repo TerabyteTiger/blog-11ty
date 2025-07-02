@@ -4,9 +4,8 @@ layout: libdoc_page.liquid
 description: "Terminals are a scary place - especially when everything is written for another OS's terminal language. Let's make the Windows terminal a little less scary!"
 tags:
     - beginner
-    - CodeNewbie
     - Terminal
-    - Windows
+    - windows
 cover_image: ../../assets/archive/blogImgs/cover-images/hello-terminal-DEV.png
 date: "2019-07-17"
 twitter_image: ../../assets/archive/blogImgs/cover-images/hello-terminal-DEV.png
@@ -86,9 +85,9 @@ Directory of {{ Your Location }}
 
 The key thing to note here:
 
-- The `<DIR>` in the third column indicates if an entity is a directory.
-- The fourth column is the file size in bytes (only files have this number)
-- Our friends `.` and `..` are here as well!
+-   The `<DIR>` in the third column indicates if an entity is a directory.
+-   The fourth column is the file size in bytes (only files have this number)
+-   Our friends `.` and `..` are here as well!
 
 #### cd
 

@@ -6,7 +6,7 @@ date: "2025-05-07"
 permalink: "{{ libdocConfig.archiveSlug }}/{{date}}-{{page.fileSlug}}/index.html"
 description: "Notes for myself on Regex"
 tags:
-    - Regex
+    - regex
 ---
 
 Notes taken while working through [https://regexone.com/](https://regexone.com/)

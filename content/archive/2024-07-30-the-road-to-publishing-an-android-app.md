@@ -6,10 +6,10 @@ date: "2024-07-30"
 permalink: "{{ libdocConfig.archiveSlug }}/{{date}}-{{page.fileSlug}}/index.html"
 description: "My experience as a web developer deploying my first app to the Google Play Store. Utilizing PWA Builder I was able to accomplish this without needing to learn a new language."
 tags:
-    - WebDev
-    - Development
-    - PWA
-    - Android
+    - webdev
+    - development
+    - pwa
+    - android
 ---
 
 _This post is not sponsored, and I am not an affiliate_
@@ -54,9 +54,9 @@ After searching this page up and down multiple times, eventually I somehow found
 
 Just when I thought I had everything rolling, one of my testers immediately found a bug (which I was vaguely aware could happen, but I thought it was going to be limited to PC users and could just fix after the fact). I made the fixes, deployed the website, and rebuilt the package to upload to the Play store. After getting what I think was every possible error - here's a list of items that you need in order to make updates to your app:
 
-- The `Version Code` needs to be set to a unique number on the PWA Builder screen
-- The `Version Name` needs to be different
-- Your `Signing Key Info` needs to match - This can be found in the `signing-key-info.txt` file that's downloaded when you first build your app. You also need the `signing.keystore` file to upload to PWA Builder.
+-   The `Version Code` needs to be set to a unique number on the PWA Builder screen
+-   The `Version Name` needs to be different
+-   Your `Signing Key Info` needs to match - This can be found in the `signing-key-info.txt` file that's downloaded when you first build your app. You also need the `signing.keystore` file to upload to PWA Builder.
 
 Once uploaded and reviewed, you'll be able to deploy the updates to your Testing/Production release.
 

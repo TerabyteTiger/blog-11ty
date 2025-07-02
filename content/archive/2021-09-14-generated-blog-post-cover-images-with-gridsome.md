@@ -7,7 +7,6 @@ tags:
     - gridsome
     - guide
     - blogging
-    - blog
 date: "2021-09-14"
 updated: "2021-09-20"
 cover_image: ../../assets/archive/blogImgs/cover-images/AutoBlogCovers-DEV.png

@@ -6,9 +6,9 @@ date: "2022-02-21"
 permalink: "{{ libdocConfig.archiveSlug }}/{{date}}-{{page.fileSlug}}/index.html"
 description: "After migrating to Nuxt I saw a huge drop in my Google Search Console results for broken pages. Adding Netlify Redirects to my blog fixed the issue and started returning my pages in search results again!"
 tags:
-    - Netlify
-    - Blogging
-    - SEO
+    - netlify
+    - blogging
+    - seo
 ---
 
 During [my migration from Gridsome to Nuxt](https://terabytetiger.com/lessons/migrate-from-gridsome-to-nuxt) I mentioned that I was having issues getting the `deep:true` part of the [Nuxt Context module](https://content.nuxtjs.org/) working, and took The Lazy Dev™ approach and just didn't use it, essentially flattening my directory structure. Unfortunately, this led to the shortening of my blog posts URLs, which has consequences when [Google Search Console](https://search.google.com/search-console/about) suddenly thinks the pages are gone!

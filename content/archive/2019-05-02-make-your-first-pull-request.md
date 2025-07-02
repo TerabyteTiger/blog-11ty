@@ -6,7 +6,6 @@ tags:
     - github
     - git
     - tutorial
-    - codenewbie
 cover_image: ../../assets/archive/blogImgs/cover-images/make-your-first-pull-request.png
 date: "2019-05-02"
 series-name: "Git Crash Course: Zero to Pull Request"

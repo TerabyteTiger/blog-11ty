@@ -29,9 +29,9 @@ While you can drop Vue in [via CDN](https://vuejs.org/v2/guide/index.html#Gettin
 
 A single file component will have the `.vue` file extension, which works like a superpowered `.html` file. It breaks down to 3 root elements:
 
-- `<template>` where you put your HTML
-- `<script>` where you put your JS
-- `<style>` where you put your CSS
+-   `<template>` where you put your HTML
+-   `<script>` where you put your JS
+-   `<style>` where you put your CSS
 
 Especially as someone looking to jump into a framework from HTML/CSS. This set me up to crush it with the stuff I was familiar with and then focus on adding the JavaScript as needed.
 
@@ -45,11 +45,11 @@ Now that I'm done raving - _What is it?_
 
 Well, once you have the Vue CLI installed, you can run `vue ui` from your terminal and Vue will spin up a command center of sorts in your browser. To name a few things that this allows you to do outside of the terminal:
 
-- Create a new project
-- Manage/Install plugins
-- Update plugins
-- Manage dependencies
-- run/start npm scripts
+-   Create a new project
+-   Manage/Install plugins
+-   Update plugins
+-   Manage dependencies
+-   run/start npm scripts
 
 This feature is still in beta, but you can [learn more about Vue UI here](https://cli.vuejs.org/guide/creating-a-project.html#using-the-gui).
 

@@ -4,9 +4,8 @@ layout: libdoc_page.liquid
 published: true
 description: Firebase Authentication web example covering how to get started with Firebase web authentication services including an example of using Firebase authentication for the web to create a login user interface.
 tags:
-    - Firebase
-    - CodeNewbie
-    - Beginners
+    - firebase
+    - beginner
 date: "2019-06-08"
 updated: "2022-04-04"
 cover_image: ../../assets/archive/blogImgs/cover-images/firebase-basics-auth-DEV.png
@@ -57,31 +56,31 @@ I'll be adding this to a boilerplate HTML file (`index.html`):
 ```html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Firebase Example</title>
-  </head>
-  <body>
-    <div id="firebaseui-auth-container">
-      <!-- This is where the Login ui will load -->
-    </div>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Firebase Example</title>
+    </head>
+    <body>
+        <div id="firebaseui-auth-container">
+            <!-- This is where the Login ui will load -->
+        </div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+        <!-- TODO: Add SDKs for Firebase products that you want to use
     https://firebase.google.com/docs/web/setup#config-web-app -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        REPLACE THIS WITH THE CODE PROVIDED BY FIREBASE
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
-  </body>
+        <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+              REPLACE THIS WITH THE CODE PROVIDED BY FIREBASE
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+    </body>
 </html>
 ```
 
@@ -106,12 +105,12 @@ Finally, this block provides the details to Firebase, creating a connection back
 
 ```html
 <script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    REPLACE THIS WITH THE CODE PROVIDED BY FIREBASE
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      REPLACE THIS WITH THE CODE PROVIDED BY FIREBASE
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 </script>
 ```
 
@@ -147,12 +146,12 @@ This will allow users to sign in with their Google account (similar to how you s
 
 For external services, details on connecting to providers can be found in the corresponding docs (linked here):
 
-- [Facebook](https://firebase.google.com/docs/auth/web/facebook-login)
-- [Twitter](https://firebase.google.com/docs/auth/web/twitter-login)
-- [GitHub](https://firebase.google.com/docs/auth/web/github-auth)
-- [Microsoft](https://firebase.google.com/docs/auth/web/microsoft-oauth)
-- [Yahoo](https://firebase.google.com/docs/auth/web/yahoo-oauth)
-- [Phone Number](https://firebase.google.com/docs/auth/web/phone-auth)
+-   [Facebook](https://firebase.google.com/docs/auth/web/facebook-login)
+-   [Twitter](https://firebase.google.com/docs/auth/web/twitter-login)
+-   [GitHub](https://firebase.google.com/docs/auth/web/github-auth)
+-   [Microsoft](https://firebase.google.com/docs/auth/web/microsoft-oauth)
+-   [Yahoo](https://firebase.google.com/docs/auth/web/yahoo-oauth)
+-   [Phone Number](https://firebase.google.com/docs/auth/web/phone-auth)
 
 ## Authentication UI
 
@@ -185,31 +184,31 @@ Within `auth.js`, we will be adding the following:
 
 ```javascript
 // 1) Create a new firebaseui.auth instance stored to our local variable ui
-const ui = new firebaseui.auth.AuthUI(firebase.auth())
+const ui = new firebaseui.auth.AuthUI(firebase.auth());
 
 // 2) These are our configurations.
 const uiConfig = {
-  callbacks: {
-    signInSuccessWithAuthResult(authResult, redirectUrl) {
-      return true
+    callbacks: {
+        signInSuccessWithAuthResult(authResult, redirectUrl) {
+            return true;
+        },
+        uiShown() {
+            document.getElementById("loader").style.display = "none";
+        },
     },
-    uiShown() {
-      document.getElementById("loader").style.display = "none"
-    },
-  },
-  signInFlow: "popup",
-  signInSuccessUrl: "signedIn",
-  signInOptions: [
-    firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    // Additional login options should be listed here
-    // once they are enabled within the console.
-  ],
-}
+    signInFlow: "popup",
+    signInSuccessUrl: "signedIn",
+    signInOptions: [
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        // Additional login options should be listed here
+        // once they are enabled within the console.
+    ],
+};
 
 // 3) Call the 'start' method on our ui class
 // including our configuration options.
-ui.start("#firebaseui-auth-container", uiConfig)
+ui.start("#firebaseui-auth-container", uiConfig);
 ```
 
 Now, if you open your `index.html` file in your browser, you should see the following loading on the page:

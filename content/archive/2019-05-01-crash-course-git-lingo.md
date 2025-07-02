@@ -5,8 +5,7 @@ published: true
 tags:
     - github
     - git
-    - beginners
-    - codenewbie
+    - beginner
 cover_image: ../../assets/archive/blogImgs/cover-images/crash-course-git-lingo.png
 date: "2019-05-01"
 series-name: "Git Crash Course: Zero to Pull Request"
@@ -43,9 +42,9 @@ One of the advantages of git is that it allows you to work on your bracelet with
 
 Just like with friendship bracelets, there are many forms contributing can take on, and all of them are important! Some examples include:
 
-- Reporting errors when trying to use code
-- Adding to the code
-- Writing blog posts about how to use the code
+-   Reporting errors when trying to use code
+-   Adding to the code
+-   Writing blog posts about how to use the code
 
 ### Repository (Repo)
 

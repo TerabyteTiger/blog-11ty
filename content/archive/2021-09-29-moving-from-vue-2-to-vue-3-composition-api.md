@@ -31,13 +31,13 @@ So instead of having:
 <!-- Vue 2.x -->
 <script>
 export default {
-  data() {
-    return {
-      messageToUser: "Hello, welcome to our app! 👋🏻",
-      buttonClicks: 0,
-    }
-  },
-}
+    data() {
+        return {
+            messageToUser: "Hello, welcome to our app! 👋🏻",
+            buttonClicks: 0,
+        };
+    },
+};
 </script>
 ```
 
@@ -47,9 +47,9 @@ We have:
 <!-- Vue 3 Composition API -->
 <script setup>
 // We need to import the Vue Functions we need:
-import { ref } from "vue"
-const messageToUser = ref("Hello, welcome to our app! 👋🏻")
-const buttonClicks = ref(0)
+import { ref } from "vue";
+const messageToUser = ref("Hello, welcome to our app! 👋🏻");
+const buttonClicks = ref(0);
 
 // Note that ref() creates an object and you can use
 // variable.value to refer to the value in your <script setup>
@@ -57,7 +57,7 @@ const buttonClicks = ref(0)
 // {{ buttonClicks }} will still work like in Vue 2
 // in our <template>
 
-console.log(buttonClicks.value)
+console.log(buttonClicks.value);
 // logs 0 to the console
 </script>
 ```
@@ -72,7 +72,7 @@ Within script setup, a function called `defineProps()` can be used in two ways t
 <!-- Vue 2.x or 3.X -->
 <!-- Parent Component Reference to child component-->
 <template>
-  <Component msg="Hello World!" :start="4" />
+    <Component msg="Hello World!" :start="4" />
 </template>
 ```
 
@@ -83,8 +83,8 @@ And how we would use props in Vue 2.X:
 <!-- Child Component -->
 <script>
 export default {
-  props: ["msg", "start"],
-}
+    props: ["msg", "start"],
+};
 </script>
 ```
 
@@ -94,9 +94,9 @@ In Vue 3, we can define our props using `defineProps()` like this if we don't ne
 <!-- Vue 3 -->
 <script setup>
 defineProps({
-  msg: String,
-  start: Number,
-})
+    msg: String,
+    start: Number,
+});
 </script>
 
 <!-- This is now usable as {{ msg }} like in Vue 2! -->
@@ -108,11 +108,11 @@ But if we want to create a reactive value `count` that starts at our `start` pro
 <!-- Vue 3 -->
 <script setup>
 const props = defineProps({
-  msg: String,
-  start: Number,
-})
+    msg: String,
+    start: Number,
+});
 
-const count = ref(props.start)
+const count = ref(props.start);
 // Updating count will be covered shortly in the methods section 😄
 </script>
 
@@ -131,24 +131,24 @@ In Vue 2 we would use:
 <!-- Vue 2.X -->
 <!-- Child Component -->
 <template>
-  <div>
-    <h1>{{ msg }}</h1>
+    <div>
+        <h1>{{ msg }}</h1>
 
-    <button type="button" @click="doubleCount()">
-      The current count is: {{ count }}
-    </button>
-  </div>
+        <button type="button" @click="doubleCount()">
+            The current count is: {{ count }}
+        </button>
+    </div>
 </template>
 
 <script>
 export default {
-  props: ["msg", "start"],
-  methods: {
-    doubleCount: function () {
-      this.count = this.count * 2
+    props: ["msg", "start"],
+    methods: {
+        doubleCount: function () {
+            this.count = this.count * 2;
+        },
     },
-  },
-}
+};
 </script>
 ```
 
@@ -157,27 +157,27 @@ In Vue 3 we can do:
 ```vue {codeTitle: "Vue-3/src/components/Component.vue"}
 <!-- Vue 3 -->
 <template>
-  <!-- Note that we don't need the wrapper div! -->
-  <!-- Vue 3 auto fragments for us! -->
-  <h1>{{ msg }}</h1>
+    <!-- Note that we don't need the wrapper div! -->
+    <!-- Vue 3 auto fragments for us! -->
+    <h1>{{ msg }}</h1>
 
-  <button type="button" @click="doubleCount()">
-    The current count is: {{ count }}
-  </button>
+    <button type="button" @click="doubleCount()">
+        The current count is: {{ count }}
+    </button>
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref } from "vue";
 
 const props = defineProps({
-  msg: String,
-  start: Number,
-})
+    msg: String,
+    start: Number,
+});
 
-const count = ref(props.start)
+const count = ref(props.start);
 const doubleCount = () => {
-  return count.value * 2
-}
+    return count.value * 2;
+};
 </script>
 ```
 
@@ -192,18 +192,19 @@ In both Vue 2.X and Vue 3 we can update our child component's template to be:
 ```vue {codeTitle: "src/components/Component.vue"}
 <!-- Vue 2.X or Vue 3 Child Component -->
 <template>
-  <!-- In Vue 3 the wrapper div is optional -->
-  <div>
-    <h1>{{ msg }}</h1>
+    <!-- In Vue 3 the wrapper div is optional -->
+    <div>
+        <h1>{{ msg }}</h1>
 
-    <button type="button" @click="doubleCount()">
-      The current count is: {{ count }}
-    </button>
+        <button type="button" @click="doubleCount()">
+            The current count is: {{ count }}
+        </button>
 
-    <p>
-      If you click the multiply button, the new value will be {{ futureValue }}
-    </p>
-  </div>
+        <p>
+            If you click the multiply button, the new value will be
+            {{ futureValue }}
+        </p>
+    </div>
 </template>
 ```
 
@@ -213,26 +214,26 @@ In Vue 2.X our script will look like this:
 <!-- Vue 2.X Child Component -->
 <script>
 export default {
-  props: ["msg", "start"],
-  data() {
-    return {
-      count: 0,
-    }
-  },
-  methods: {
-    doubleCount: function () {
-      this.count = this.count * 2
+    props: ["msg", "start"],
+    data() {
+        return {
+            count: 0,
+        };
     },
-  },
-  mounted() {
-    this.count = this.start
-  },
-  computed: {
-    futureValue: function () {
-      return this.count * 2
+    methods: {
+        doubleCount: function () {
+            this.count = this.count * 2;
+        },
     },
-  },
-}
+    mounted() {
+        this.count = this.start;
+    },
+    computed: {
+        futureValue: function () {
+            return this.count * 2;
+        },
+    },
+};
 </script>
 ```
 
@@ -241,19 +242,19 @@ And in Vue 3 our script will look like this:
 ```vue {codeTitle: "Vue-3/src/components/Component.vue"}
 <!-- Vue 3 Child Component -->
 <script setup>
-import { ref, computed } from "vue"
+import { ref, computed } from "vue";
 
 const props = defineProps({
-  msg: String,
-  start: Number,
-})
+    msg: String,
+    start: Number,
+});
 
-const count = ref(props.start)
+const count = ref(props.start);
 
 const doubleCount = () => {
-  count.value = count.value * 2
-}
+    count.value = count.value * 2;
+};
 
-const futureValue = computed(() => count.value * 2)
+const futureValue = computed(() => count.value * 2);
 </script>
 ```

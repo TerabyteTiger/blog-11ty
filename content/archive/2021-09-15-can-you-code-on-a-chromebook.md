@@ -4,7 +4,6 @@ published: true
 description: Can you code on a Chromebook? Yes! Here are some ways that you can start programming on a Chromebook - including no-installation options!
 tags:
     - chromebook
-    - codenewbie
     - beginner
 layout: libdoc_page.liquid
 date: "2021-09-15"

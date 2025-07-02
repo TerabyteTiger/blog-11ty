@@ -56,12 +56,12 @@ This is great for deploying your bot to your own server, but if you want to allo
 
 ```js
 if (interaction.member.moderatable) {
-  interaction.member.timeout(30000, "I told you not to push the button 😜")
+    interaction.member.timeout(30000, "I told you not to push the button 😜");
 }
 ```
 
 ## Additional Resources
 
-- Discord.js: [Docs](https://discord.js.org/#/docs/discord.js/stable/general/welcome) | [Getting Started Guide](https://discordjs.guide/#before-you-begin)
-- [Discord Dev Docs](https://discord.com/developers/docs/intro)
-- [My Chaos Bot](https://github.com/TerabyteTiger/chaosbot)
+-   Discord.js: [Docs](https://discord.js.org/#/docs/discord.js/stable/general/welcome) | [Getting Started Guide](https://discordjs.guide/#before-you-begin)
+-   [Discord Dev Docs](https://discord.com/developers/docs/intro)
+-   [My Chaos Bot](https://github.com/TerabyteTiger/chaosbot)

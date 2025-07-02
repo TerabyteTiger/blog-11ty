@@ -3,9 +3,9 @@ title: Error Handling in Vue with Vuex
 published: true
 description: Vuex error handling in a flash message format with an error component, including setting an error message from a vuex module.
 tags:
-    - Vue
-    - Javascript
-    - Webdev
+    - vue
+    - javascript
+    - webdev
 layout: libdoc_page.liquid
 date: "2020-02-05"
 cover_image: ../../assets/archive/blogImgs/cover-images/vuexErrors-DEV.png

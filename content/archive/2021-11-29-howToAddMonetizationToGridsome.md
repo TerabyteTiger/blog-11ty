@@ -37,12 +37,12 @@ In your `main.js` file:
 // Imports/component registration still goes here
 
 export default function (Vue, { router, head, isClient }) {
-  // Component registration/other config work
-  head.meta.push({
-    name: "monetization",
-    content: "$ilp.uphold.com/FYGWHFNNRHg8",
-    // Replace with your monetization endpoint from the "Content" from the previous step
-  })
+    // Component registration/other config work
+    head.meta.push({
+        name: "monetization",
+        content: "$ilp.uphold.com/FYGWHFNNRHg8",
+        // Replace with your monetization endpoint from the "Content" from the previous step
+    });
 }
 ```
 
@@ -58,22 +58,22 @@ The first way you can check if the user is using a form of web monetization is t
 
 ```vue {codeTitle: "ComponentWithPaidContent.vue"}
 <template>
-  <div>
-    <div v-if="showMonetization">Paywall blocked content goes here</div>
-  </div>
+    <div>
+        <div v-if="showMonetization">Paywall blocked content goes here</div>
+    </div>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      showMonetization: false,
-    }
-  },
-  mounted() {
-    this.showMonetization =
-      document.monetization && document.monetization.state === "started"
-  },
-}
+    data() {
+        return {
+            showMonetization: false,
+        };
+    },
+    mounted() {
+        this.showMonetization =
+            document.monetization && document.monetization.state === "started";
+    },
+};
 </script>
 ```
 
@@ -93,24 +93,25 @@ This works because adding the listener will wait for the monetization to load in
 
 ```vue {codeTitle: "ComponentWithPaidContent.vue"}
 <template>
-  <div>
-    <div v-if="showMonetization">Paywall blocked content goes here</div>
-  </div>
+    <div>
+        <div v-if="showMonetization">Paywall blocked content goes here</div>
+    </div>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      showMonetization: false,
-    }
-  },
-  mounted() {
-    document.monetization.addEventListener("monetizationstart", () => {
-      this.showMonetization =
-        document.monetization && document.monetization.state === "started"
-    })
-  },
-}
+    data() {
+        return {
+            showMonetization: false,
+        };
+    },
+    mounted() {
+        document.monetization.addEventListener("monetizationstart", () => {
+            this.showMonetization =
+                document.monetization &&
+                document.monetization.state === "started";
+        });
+    },
+};
 </script>
 ```
 

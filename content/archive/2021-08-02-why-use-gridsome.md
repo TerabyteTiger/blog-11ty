@@ -17,10 +17,10 @@ Gridsome is a Static Site Generator (SSG) that takes heavy influence from [Gatsb
 
 If any of the following describe your situation, Gridsome might be for you:
 
-- Want to work with Vue?
-- Need to build a statically generated site?
-- Looking for a solid jump off point?
-- Do you need GraphQL integration?
+-   Want to work with Vue?
+-   Need to build a statically generated site?
+-   Looking for a solid jump off point?
+-   Do you need GraphQL integration?
 
 In this post I'll be breaking down the reasons why a developer would choose Gridsome!
 

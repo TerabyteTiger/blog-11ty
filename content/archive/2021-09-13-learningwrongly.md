@@ -4,7 +4,7 @@ layout: libdoc_page.liquid
 published: true
 description: My thoughts on how having fun and staying motivated while learning is more important than learning things in a 'correct' order.
 tags:
-    - beginners
+    - beginner
     - learning
 cover_image: ../../assets/archive/blogImgs/cover-images/learnWrongly-DEV.png
 date: "2021-09-13"

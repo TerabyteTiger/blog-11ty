@@ -5,7 +5,6 @@ published: true
 description: Beginner's guide to Array.slice(). Everything you need to know about array.slice() by thinking of an array as a loaf of bread!
 tags:
     - beginner
-    - codeNewbie
     - arrays
 date: "2019-05-13"
 updated: "2021-09-17"

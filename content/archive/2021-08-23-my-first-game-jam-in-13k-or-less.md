@@ -3,8 +3,8 @@ title: My first game jam in 13K or less
 published: true
 description: A brief retrospective on building my first JS game for js13kGames 2021 covering the fun parts, the challenges, and what I'm submitting as my entry!
 tags:
-    - Javascript
-    - Gamejam
+    - javascript
+    - gamejam
 layout: libdoc_page.liquid
 date: "2021-08-23"
 cover_image: ../../assets/archive/blogImgs/cover-images/gamejam-DEV.png

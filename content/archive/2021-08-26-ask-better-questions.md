@@ -25,21 +25,21 @@ I'm expecting the `doc` JSON object to show in my HTML but nothing is showing.
 
 ```html
 <template>
-  <div>{{doc}}</div>
+    <div>{{doc}}</div>
 </template>
 
 <script>
-  export default {
-    name: "documentCard",
-    data() {
-      return {
-        ddoc: {
-          name: "Document 1",
-          date: "08/25/2021",
+    export default {
+        name: "documentCard",
+        data() {
+            return {
+                ddoc: {
+                    name: "Document 1",
+                    date: "08/25/2021",
+                },
+            };
         },
-      }
-    },
-  }
+    };
 </script>
 
 <!-- Style removed -->
@@ -53,41 +53,41 @@ My code has an error! How do I fix it?
 
 ```html
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    {{ doc }}
-  </div>
+    <div id="app">
+        <img alt="Vue logo" src="./assets/logo.png" />
+        <HelloWorld msg="Welcome to Your Vue.js App" />
+        {{ doc }}
+    </div>
 </template>
 
 <script>
-  import HelloWorld from "./components/HelloWorld.vue"
+    import HelloWorld from "./components/HelloWorld.vue";
 
-  export default {
-    name: "App",
-    components: {
-      HelloWorld,
-    },
-    data() {
-      return {
-        ddoc: {
-          name: "Document 1",
-          date: "08/25/2021",
+    export default {
+        name: "App",
+        components: {
+            HelloWorld,
         },
-      }
-    },
-  }
+        data() {
+            return {
+                ddoc: {
+                    name: "Document 1",
+                    date: "08/25/2021",
+                },
+            };
+        },
+    };
 </script>
 
 <style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
 </style>
 ```
 

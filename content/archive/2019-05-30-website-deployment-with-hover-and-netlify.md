@@ -4,10 +4,9 @@ layout: libdoc_page.liquid
 published: true
 description: Walk through the process of deploying your website to Netlify to share with the world and setting up a custom domain name to direct to it from Hover.
 tags:
-    - CodeNewbie
-    - Beginner
-    - Netlify
-    - GitHub
+    - beginner
+    - netlify
+    - github
 cover_image: ../../assets/archive/blogImgs/cover-images/deploy-hover-netlify.png
 date: "2019-05-30"
 twitter_image: ../../assets/archive/blogImgs/cover-images/deploy-hover-netlify.png
@@ -29,10 +28,10 @@ _You can purchase domains from Netlify directly. I prefer Hover, so that's what 
 
 ## Prerequisites
 
-- [Github Account](https://github.com/) (Or GitLab or BitBucket - whichever you prefer)
-- [Netlify Account](https://app.netlify.com)
-- [Hover Account](https://www.hover.com/) - This is only required if you will be purchasing and connecting a custom domain through hover.
-- Create a GitHub Repository for your site and upload your files there.
+-   [Github Account](https://github.com/) (Or GitLab or BitBucket - whichever you prefer)
+-   [Netlify Account](https://app.netlify.com)
+-   [Hover Account](https://www.hover.com/) - This is only required if you will be purchasing and connecting a custom domain through hover.
+-   Create a GitHub Repository for your site and upload your files there.
 
 ### How to Github
 

@@ -4,10 +4,10 @@ layout: libdoc_page.liquid
 published: true
 description: Get Firestore + Auth working. Do not pass Go. Do not collect 200 tutorials.
 tags:
-    - Vue
-    - Firebase
-    - Webdev
-    - Firestore
+    - vue
+    - firebase
+    - webdev
+    - firestore
 cover_image: ../../assets/archive/blogImgs/cover-images/no-nonsense-firebase-auth-and-firestore-in-vue-DEV.png
 date: "2020-09-09"
 twitter_image: ../../assets/archive/blogImgs/twitter-images/no-nonsense-firebase-auth-and-firestore-in-vue-Twitter.png
@@ -221,5 +221,5 @@ router.beforeEach((to, from, next) => {
 
 These sources helped me get this working the first time:
 
-- [Building a Real-World Web App With Vue.js and Firebase](https://savvyapps.com/blog/definitive-guide-building-web-app-vuejs-firebase)
-- [Firebase Docs](https://firebase.google.com/docs)
+-   [Building a Real-World Web App With Vue.js and Firebase](https://savvyapps.com/blog/definitive-guide-building-web-app-vuejs-firebase)
+-   [Firebase Docs](https://firebase.google.com/docs)

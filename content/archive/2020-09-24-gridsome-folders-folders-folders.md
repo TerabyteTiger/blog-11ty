@@ -4,10 +4,10 @@ layout: libdoc_page.liquid
 published: true
 description: Outlining the differences between the many folders of Gridsome's file structure.
 tags:
-    - Gridsome
-    - Vue
-    - Beginner
-    - Javascript
+    - gridsome
+    - vue
+    - beginner
+    - javascript
 date: "2020-09-24"
 cover_image: ../../assets/archive/blogImgs/cover-images/foldersfoldersfolders-DEV.png
 twitter_image: ../../assets/archive/blogImgs/twitter-images/foldersfoldersfolders-Twitter.png
@@ -70,11 +70,11 @@ Layouts at their base are `.vue` file extension Single File Components, but with
 
 The TL;DR for `src/pages` is any one off page that you want to add. For example:
 
-- Home page
-- About page
-- Uses page
-- Contact page
-- Blog index page
+-   Home page
+-   About page
+-   Uses page
+-   Contact page
+-   Blog index page
 
 The slightly longer summary is any page that you want to tweak the contents/layout of without impacting any other pages.
 
