@@ -1,4 +1,6 @@
 ---
+published: true
+picture: false #For Single Pics. Use description for fig caption
 title: My favorite pet photos!
 description: My favorite photos of our pets 🐾
 layout: libdoc_page.liquid

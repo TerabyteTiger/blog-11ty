@@ -19,6 +19,10 @@
         {
             "url": "https://github.com/TerabyteTiger",
             "text": "GitHub"
+        },
+        {
+            "url": "https://terabytetiger.com/rss.xml",
+            "text": "RSS"
         }
     ],
 

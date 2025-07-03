@@ -12,10 +12,14 @@ tags:
 
 ## Posts
 
+-   [Why doesn't Advice Work](https://dynomight.substack.com/p/advice)
+
 ## Tools
 
-[https://calvin.sh/tools/dot-counter/](https://calvin.sh/tools/dot-counter/)
+-   [https://calvin.sh/tools/dot-counter/](https://calvin.sh/tools/dot-counter/) - Nifty web tool for counting number of items in an image
+-   [Image-to-Pixel](https://tezumie.github.io/Image-to-Pixel/) - Convert images to various levels of pixelated
+-   [CSS-Loaders](https://css-loaders.com/) - Loaders for HTML/CSS
 
 ## Sites
 
-## Shops
+-   [Ye Olde Blogroll](https://blogroll.org/)

@@ -4,7 +4,7 @@ layout: libdoc_page.liquid
 description: "Terminals are a scary place - especially when everything is written for another OS's terminal language. Let's make the Windows terminal a little less scary!"
 tags:
     - beginner
-    - Terminal
+    - terminal
     - windows
 cover_image: ../../assets/archive/blogImgs/cover-images/hello-terminal-DEV.png
 date: "2019-07-17"

@@ -200,6 +200,9 @@ export default {
         postsByDateDescending: function (collectionsApi) {
             return collectionsApi
                 .getFilteredByGlob("content/blog/*.md")
+                .filter((el) => {
+                    return el.data.published;
+                })
                 .sort(function (a, b) {
                     return b.date - a.date; // sort by date - descending
                 });
