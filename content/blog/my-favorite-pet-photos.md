@@ -8,7 +8,7 @@ permalink: "{{ libdocConfig.blogSlug }}/{{page.fileSlug}}/index.html"
 tags:
     - pets
     - pictures
-date: git Last Modified
+date: 2025-07-03
 ogImageUrl: /assets/blog/blogroll-photos/Zoey-Face.jpg
 ---
 
