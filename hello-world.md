@@ -8,7 +8,7 @@ date: git Last Modified
 
 ## Take a look around!
 
--   {% iconCard 'Projects', 'Some nifty projects I made. <br>[Projects](#take-a-look-around).', 'code' %}
+-   {% iconCard 'Projects', 'Some nifty projects I made. <br>[Projects](/projects/).', 'code' %}
 -   {% iconCard 'Blog', 'Where I write about my life. <br>[Read Blog](/posts/)', 'pen' %}
 -   {% iconCard 'Links', 'My favorite internet links. <br>[See Links](/bookmarks/)', 'link-simple' %}
 
