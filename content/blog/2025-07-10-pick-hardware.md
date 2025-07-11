@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 picture: false #For Single Pics. Use description for fig caption
 title: "Pick of the Week: Hardware Tinkering"
 description: This week's pick of the week- tinkering with hardware. 
@@ -7,7 +7,7 @@ layout: libdoc_page.liquid
 permalink: "{{ libdocConfig.blogSlug }}/{{page.fileSlug}}/index.html"
 tags:
     - pick-of-the-week
-date: 2025-07-10
+date: 2025-07-11
 ---
 
 Welcome to my new "Pick of the Week" series, where I share something I've been enjoying during the past week! 
