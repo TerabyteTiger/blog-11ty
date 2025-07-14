@@ -1,8 +1,8 @@
 ---
-published: false
+published: true
 picture: false #For Single Pics. Use description for fig caption
-title: Gemini in Gmail  
-description: I don't want this. For the love of all that is holy let me disable it. 
+title: Gemini in Gmail
+description: I don't want this. For the love of all that is holy let me disable it.
 layout: libdoc_page.liquid
 permalink: "{{ libdocConfig.blogSlug }}/{{page.fileSlug}}/index.html"
 tags:
