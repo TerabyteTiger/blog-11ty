@@ -3,7 +3,7 @@ published: false
 title: Saying Goodbye
 description: My favorite photos of our pets 🐾
 layout: libdoc_page.liquid
-permalink: "{{ libdocConfig.blogSlug }}/{{page.fileSlug}}/index.html"
+permalink: false #"{{ libdocConfig.blogSlug }}/{{page.fileSlug}}/index.html"
 tags:
 date: git Last Modified
 #ogImageUrl: /assets/blog/blogroll-photos/Zoey-Face.jpg
