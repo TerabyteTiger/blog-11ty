@@ -14,4 +14,6 @@ This week's pick is **Fountain Pens**.
 
 Anyone that's been around me for a while has either seen me using or heard me talk about fountain pens and how much fun it is to find new inks and write with different pens. It all started 2 years ago when I got a [TWSBI ECO](https://www.gouletpens.com/products/twsbi-eco-fountain-pen-transparent-purple-special-edition) for my birthday, then started buying a few more pens and inks this year after doing regular journalling.
 
+The discovery of inks that can dry in wildly different colors in particular (Sheening Inks) has been so fascinating and sent me down the rabbit hole of how they can be made and manipulated.
+
 There's just something so much better about writing things down and drawing than anything a mouse and keyboard can do. Write something down today 😁
