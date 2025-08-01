@@ -2,7 +2,7 @@
 published: true
 picture: false #For Single Pics. Use description for fig caption
 title: "Pick of the Week: Where's your Ed At"
-description: This week's pick of the week- tinkering with hardware.
+description: This week's pick of the week- the Where's your Ed At blog/newsletter.
 layout: libdoc_page.liquid
 permalink: "{{ libdocConfig.blogSlug }}/{{page.fileSlug}}/index.html"
 tags:
